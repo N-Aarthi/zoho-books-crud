@@ -1,0 +1,616 @@
+
+### Base URL Format
+```
+https://www.zohoapis.in/books/v3/{module}?organization_id={organization_id}
+```
+
+### Example URLs for Each Module
+
+#### Contacts
+- **Get All Contacts**:
+  ```
+  GET https://www.zohoapis.in/books/v3/contacts?organization_id={organization_id}
+  ```
+
+- **Create Contact**:
+  ```
+  POST https://www.zohoapis.in/books/v3/contacts?organization_id={organization_id}
+  ```
+  **Body (JSON)**:
+  ```json
+  {
+    "contact_name": "John Doe",
+    "contact_type": "customer",
+    "email": "john.doe@example.com",
+    "phone": "1234567890"
+  }
+  ```
+
+- **Get Contact by ID**:
+  ```
+  GET https://www.zohoapis.in/books/v3/contacts/{id}?organization_id={organization_id}
+  ```
+
+- **Update Contact by ID**:
+  ```
+  PUT https://www.zohoapis.in/books/v3/contacts/{id}?organization_id={organization_id}
+  ```
+  **Body (JSON)**:
+  ```json
+  {
+    "contact_name": "John Doe Updated",
+    "email": "john.doe.updated@example.com",
+    "phone": "0987654321"
+  }
+  ```
+
+- **Delete Contact by ID**:
+  ```
+  DELETE https://www.zohoapis.in/books/v3/contacts/{id}?organization_id={organization_id}
+  ```
+
+#### Estimates
+- **Get All Estimates**:
+  ```
+  GET https://www.zohoapis.in/books/v3/estimates?organization_id={organization_id}
+  ```
+
+- **Create Estimate**:
+  ```
+  POST https://www.zohoapis.in/books/v3/estimates?organization_id={organization_id}
+  ```
+  **Body (JSON)**:
+  ```json
+  {
+    "customer_id": "1234567890",
+    "line_items": [
+      {
+        "item_id": "0987654321",
+        "rate": 100,
+        "quantity": 2
+      }
+    ],
+    "estimate_date": "2024-08-28"
+  }
+  ```
+
+- **Get Estimate by ID**:
+  ```
+  GET https://www.zohoapis.in/books/v3/estimates/{id}?organization_id={organization_id}
+  ```
+
+- **Update Estimate by ID**:
+  ```
+  PUT https://www.zohoapis.in/books/v3/estimates/{id}?organization_id={organization_id}
+  ```
+  **Body (JSON)**:
+  ```json
+  {
+    "line_items": [
+      {
+        "item_id": "0987654321",
+        "rate": 120,
+        "quantity": 3
+      }
+    ]
+  }
+  ```
+
+- **Delete Estimate by ID**:
+  ```
+  DELETE https://www.zohoapis.in/books/v3/estimates/{id}?organization_id={organization_id}
+  ```
+
+#### Invoices
+- **Get All Invoices**:
+  ```
+  GET https://www.zohoapis.in/books/v3/invoices?organization_id={organization_id}
+  ```
+
+- **Create Invoice**:
+  ```
+  POST https://www.zohoapis.in/books/v3/invoices?organization_id={organization_id}
+  ```
+  **Body (JSON)**:
+  ```json
+  {
+    "customer_id": "1234567890",
+    "line_items": [
+      {
+        "item_id": "0987654321",
+        "rate": 150,
+        "quantity": 5
+      }
+    ],
+    "invoice_date": "2024-08-28"
+  }
+  ```
+
+- **Get Invoice by ID**:
+  ```
+  GET https://www.zohoapis.in/books/v3/invoices/{id}?organization_id={organization_id}
+  ```
+
+- **Update Invoice by ID**:
+  ```
+  PUT https://www.zohoapis.in/books/v3/invoices/{id}?organization_id={organization_id}
+  ```
+  **Body (JSON)**:
+  ```json
+  {
+    "line_items": [
+      {
+        "item_id": "0987654321",
+        "rate": 160,
+        "quantity": 6
+      }
+    ]
+  }
+  ```
+
+- **Delete Invoice by ID**:
+  ```
+  DELETE https://www.zohoapis.in/books/v3/invoices/{id}?organization_id={organization_id}
+  ```
+
+#### Customer Payments
+- **Get All Customer Payments**:
+  ```
+  GET https://www.zohoapis.in/books/v3/customerpayments?organization_id={organization_id}
+  ```
+
+- **Create Customer Payment**:
+  ```
+  POST https://www.zohoapis.in/books/v3/customerpayments?organization_id={organization_id}
+  ```
+  **Body (JSON)**:
+  ```json
+  {
+    "customer_id": "1234567890",
+    "payment_mode": "cash",
+    "amount": 500
+  }
+  ```
+
+- **Get Customer Payment by ID**:
+  ```
+  GET https://www.zohoapis.in/books/v3/customerpayments/{id}?organization_id={organization_id}
+  ```
+
+- **Update Customer Payment by ID**:
+  ```
+  PUT https://www.zohoapis.in/books/v3/customerpayments/{id}?organization_id={organization_id}
+  ```
+  **Body (JSON)**:
+  ```json
+  {
+    "amount": 600
+  }
+  ```
+
+- **Delete Customer Payment by ID**:
+  ```
+  DELETE https://www.zohoapis.in/books/v3/customerpayments/{id}?organization_id={organization_id}
+  ```
+
+#### Credit Notes
+- **Get All Credit Notes**:
+  ```
+  GET https://www.zohoapis.in/books/v3/creditnotes?organization_id={organization_id}
+  ```
+
+- **Create Credit Note**:
+  ```
+  POST https://www.zohoapis.in/books/v3/creditnotes?organization_id={organization_id}
+  ```
+  **Body (JSON)**:
+  ```json
+  {
+    "customer_id": "1234567890",
+    "line_items": [
+      {
+        "item_id": "0987654321",
+        "rate": 200,
+        "quantity": 2
+      }
+    ],
+    "credit_note_date": "2024-08-28"
+  }
+  ```
+
+- **Get Credit Note by ID**:
+  ```
+  GET https://www.zohoapis.in/books/v3/creditnotes/{id}?organization_id={organization_id}
+  ```
+
+- **Update Credit Note by ID**:
+  ```
+  PUT https://www.zohoapis.in/books/v3/creditnotes/{id}?organization_id={organization_id}
+  ```
+  **Body (JSON)**:
+  ```json
+  {
+    "line_items": [
+      {
+        "item_id": "0987654321",
+        "rate": 210,
+        "quantity": 3
+      }
+    ]
+  }
+  ```
+
+- **Delete Credit Note by ID**:
+  ```
+  DELETE https://www.zohoapis.in/books/v3/creditnotes/{id}?organization_id={organization_id}
+  ```
+
+#### Projects
+- **Get All Projects**:
+  ```
+  GET https://www.zohoapis.in/books/v3/projects?organization_id={organization_id}
+  ```
+
+- **Create Project**:
+  ```
+  POST https://www.zohoapis.in/books/v3/projects?organization_id={organization_id}
+  ```
+  **Body (JSON)**:
+  ```json
+  {
+    "project_name": "New Project",
+    "customer_id": "1234567890"
+  }
+  ```
+
+- **Get Project by ID**:
+  ```
+  GET https://www.zohoapis.in/books/v3/projects/{id}?organization_id={organization_id}
+  ```
+
+- **Update Project by ID**:
+  ```
+  PUT https://www.zohoapis.in/books/v3/projects/{id}?organization_id={organization_id}
+  ```
+  **Body (JSON)**:
+  ```json
+  {
+    "project_name": "Updated Project Name"
+  }
+  ```
+
+- **Delete Project by ID**:
+  ```
+  DELETE https://www.zohoapis.in/books/v3/projects/{id}?organization_id={organization_id}
+  ```
+
+#### Expenses
+- **Get All Expenses**:
+  ```
+  GET https://www.zohoapis.in/books/v3/expenses?organization_id={organization_id}
+  ```
+
+- **Create Expense**:
+  ```
+  POST https://www.zohoapis.in/books/v3/expenses?organization_id={organization_id}
+  ```
+  **Body (JSON)**:
+  ```json
+  {
+    "expense_type": "Travel",
+    "amount": 300,
+    "expense_date": "2024-08-28"
+  }
+  ```
+
+- **Get Expense by ID**:
+  ```
+  GET https://www.zohoapis.in/books/v3/expenses/{id}?organization_id={organization_id}
+  ```
+
+- **Update Expense by ID**:
+  ```
+  PUT https://www.zohoapis.in/books/v3/expenses/{id}?organization_id={organization_id}
+  ```
+  **Body (JSON)**:
+  ```json
+  {
+    "amount": 350
+  }
+  ```
+
+- **Delete Expense by ID**:
+ 
+
+ ```
+  DELETE https://www.zohoapis.in/books/v3/expenses/{id}?organization_id={organization_id}
+  ```
+
+#### Sales Orders
+- **Get All Sales Orders**:
+  ```
+  GET https://www.zohoapis.in/books/v3/salesorders?organization_id={organization_id}
+  ```
+
+- **Create Sales Order**:
+  ```
+  POST https://www.zohoapis.in/books/v3/salesorders?organization_id={organization_id}
+  ```
+  **Body (JSON)**:
+  ```json
+  {
+    "customer_id": "1234567890",
+    "line_items": [
+      {
+        "item_id": "0987654321",
+        "rate": 250,
+        "quantity": 4
+      }
+    ],
+    "salesorder_date": "2024-08-28"
+  }
+  ```
+
+- **Get Sales Order by ID**:
+  ```
+  GET https://www.zohoapis.in/books/v3/salesorders/{id}?organization_id={organization_id}
+  ```
+
+- **Update Sales Order by ID**:
+  ```
+  PUT https://www.zohoapis.in/books/v3/salesorders/{id}?organization_id={organization_id}
+  ```
+  **Body (JSON)**:
+  ```json
+  {
+    "line_items": [
+      {
+        "item_id": "0987654321",
+        "rate": 260,
+        "quantity": 5
+      }
+    ]
+  }
+  ```
+
+- **Delete Sales Order by ID**:
+  ```
+  DELETE https://www.zohoapis.in/books/v3/salesorders/{id}?organization_id={organization_id}
+  ```
+
+#### Purchase Orders
+- **Get All Purchase Orders**:
+  ```
+  GET https://www.zohoapis.in/books/v3/purchaseorders?organization_id={organization_id}
+  ```
+
+- **Create Purchase Order**:
+  ```
+  POST https://www.zohoapis.in/books/v3/purchaseorders?organization_id={organization_id}
+  ```
+  **Body (JSON)**:
+  ```json
+  {
+    "vendor_id": "1234567890",
+    "line_items": [
+      {
+        "item_id": "0987654321",
+        "rate": 300,
+        "quantity": 2
+      }
+    ],
+    "purchaseorder_date": "2024-08-28"
+  }
+  ```
+
+- **Get Purchase Order by ID**:
+  ```
+  GET https://www.zohoapis.in/books/v3/purchaseorders/{id}?organization_id={organization_id}
+  ```
+
+- **Update Purchase Order by ID**:
+  ```
+  PUT https://www.zohoapis.in/books/v3/purchaseorders/{id}?organization_id={organization_id}
+  ```
+  **Body (JSON)**:
+  ```json
+  {
+    "line_items": [
+      {
+        "item_id": "0987654321",
+        "rate": 310,
+        "quantity": 3
+      }
+    ]
+  }
+  ```
+
+- **Delete Purchase Order by ID**:
+  ```
+  DELETE https://www.zohoapis.in/books/v3/purchaseorders/{id}?organization_id={organization_id}
+  ```
+
+#### Bills
+- **Get All Bills**:
+  ```
+  GET https://www.zohoapis.in/books/v3/bills?organization_id={organization_id}
+  ```
+
+- **Create Bill**:
+  ```
+  POST https://www.zohoapis.in/books/v3/bills?organization_id={organization_id}
+  ```
+  **Body (JSON)**:
+  ```json
+  {
+    "vendor_id": "1234567890",
+    "line_items": [
+      {
+        "item_id": "0987654321",
+        "rate": 350,
+        "quantity": 1
+      }
+    ],
+    "bill_date": "2024-08-28"
+  }
+  ```
+
+- **Get Bill by ID**:
+  ```
+  GET https://www.zohoapis.in/books/v3/bills/{id}?organization_id={organization_id}
+  ```
+
+- **Update Bill by ID**:
+  ```
+  PUT https://www.zohoapis.in/books/v3/bills/{id}?organization_id={organization_id}
+  ```
+  **Body (JSON)**:
+  ```json
+  {
+    "line_items": [
+      {
+        "item_id": "0987654321",
+        "rate": 360,
+        "quantity": 2
+      }
+    ]
+  }
+  ```
+
+- **Delete Bill by ID**:
+  ```
+  DELETE https://www.zohoapis.in/books/v3/bills/{id}?organization_id={organization_id}
+  ```
+
+#### Debit Notes
+- **Get All Debit Notes**:
+  ```
+  GET https://www.zohoapis.in/books/v3/debitnotes?organization_id={organization_id}
+  ```
+
+- **Create Debit Note**:
+  ```
+  POST https://www.zohoapis.in/books/v3/debitnotes?organization_id={organization_id}
+  ```
+  **Body (JSON)**:
+  ```json
+  {
+    "customer_id": "1234567890",
+    "line_items": [
+      {
+        "item_id": "0987654321",
+        "rate": 400,
+        "quantity": 1
+      }
+    ],
+    "debit_note_date": "2024-08-28"
+  }
+  ```
+
+- **Get Debit Note by ID**:
+  ```
+  GET https://www.zohoapis.in/books/v3/debitnotes/{id}?organization_id={organization_id}
+  ```
+
+- **Update Debit Note by ID**:
+  ```
+  PUT https://www.zohoapis.in/books/v3/debitnotes/{id}?organization_id={organization_id}
+  ```
+  **Body (JSON)**:
+  ```json
+  {
+    "line_items": [
+      {
+        "item_id": "0987654321",
+        "rate": 410,
+        "quantity": 2
+      }
+    ]
+  }
+  ```
+
+- **Delete Debit Note by ID**:
+  ```
+  DELETE https://www.zohoapis.in/books/v3/debitnotes/{id}?organization_id={organization_id}
+  ```
+
+#### Vendor Payments
+- **Get All Vendor Payments**:
+  ```
+  GET https://www.zohoapis.in/books/v3/vendorpayments?organization_id={organization_id}
+  ```
+
+- **Create Vendor Payment**:
+  ```
+  POST https://www.zohoapis.in/books/v3/vendorpayments?organization_id={organization_id}
+  ```
+  **Body (JSON)**:
+  ```json
+  {
+    "vendor_id": "1234567890",
+    "payment_mode": "bank_transfer",
+    "amount": 700
+  }
+  ```
+
+- **Get Vendor Payment by ID**:
+  ```
+  GET https://www.zohoapis.in/books/v3/vendorpayments/{id}?organization_id={organization_id}
+  ```
+
+- **Update Vendor Payment by ID**:
+  ```
+  PUT https://www.zohoapis.in/books/v3/vendorpayments/{id}?organization_id={organization_id}
+  ```
+  **Body (JSON)**:
+  ```json
+  {
+    "amount": 750
+  }
+  ```
+
+- **Delete Vendor Payment by ID**:
+  ```
+  DELETE https://www.zohoapis.in/books/v3/vendorpayments/{id}?organization_id={organization_id}
+  ```
+
+#### Banking
+- **Get All Bank Accounts**:
+  ```
+  GET https://www.zohoapis.in/books/v3/banking?organization_id={organization_id}
+  ```
+
+- **Create Bank Account**:
+  ```
+  POST https://www.zohoapis.in/books/v3/banking?organization_id={organization_id}
+  ```
+  **Body (JSON)**:
+  ```json
+  {
+    "account_name": "Bank Account",
+    "account_number": "1234567890",
+    "account_type": "Checking"
+  }
+  ```
+
+- **Get Bank Account by ID**:
+  ```
+  GET https://www.zohoapis.in/books/v3/banking/{id}?organization_id={organization_id}
+  ```
+
+- **Update Bank Account by ID**:
+  ```
+  PUT https://www.zohoapis.in/books/v3/banking/{id}?organization_id={organization_id}
+  ```
+  **Body (JSON)**:
+  ```json
+  {
+    "account_name": "Updated Bank Account"
+  }
+  ```
+
+- **Delete Bank Account by ID**:
+  ```
+  DELETE https://www.zohoapis.in/books/v3/banking/{id}?organization_id={organization_id}
+  ```
+
